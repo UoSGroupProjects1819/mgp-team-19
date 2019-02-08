@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: de8fa557555b9d947a8234055f3d6941
+  productGUID: d45739c8b851e8343a4392402bf03a12
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Group19Game
+  productName: Test
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -611,9 +611,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: e5aba655-f85d-4e3e-b1cb-8899aceeeb1b
+  cloudProjectId: 9baabede-d30a-4411-ad59-0af1a6f422c7
   framebufferDepthMemorylessMode: 0
-  projectName: Group19Game (2)
+  projectName: Test
   organizationId: fredwright
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
