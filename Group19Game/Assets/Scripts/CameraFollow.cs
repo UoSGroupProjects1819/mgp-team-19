@@ -2,8 +2,10 @@
 
 public class CameraFollow : MonoBehaviour
 {
+    [Header("Assigned Variables")]
     public Transform player;
     public Camera mycamera;
+    [Header("Camera movement variables")]
     public float zoomSpeed = 20f;
     public float normal = 60f;
     private bool isZoomed = false;
@@ -12,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     public float panSpeed = 4.0f;     
     public float zoomSpeedPan = 4.0f;     
 
-    private Vector3 mouseOrigin;  
+    private Vector3 mouseOrigin;
     private bool isPanning; 
     private bool isRotating; 
     private bool isZooming;
@@ -21,6 +23,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         mycamera = transform.GetComponent<Camera>();
     }
      
@@ -28,6 +31,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         HandleMovement();
         HandleZoom();
         
@@ -103,14 +107,7 @@ public class CameraFollow : MonoBehaviour
             }
 
             transform.position = newCameraPosition;
-
-
         }
-
-
-
-
-
     }
 
     private void HandleZoom()
