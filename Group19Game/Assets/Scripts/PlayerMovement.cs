@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-
+    [Tooltip("Character speed as a float")]
     public float speed = 12f;
-    // Start is called before the first frame update
-    void Start()
+
+    private bool NSpawned = false;
+    private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+        GameObject SpawnHalt = GameObject.Find("PlayerSetup");
 
+        SpawnHalt.GetComponent<PlayerInstantiate>().willSpawnPlayer = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
-
+        // if statements to determine movement based on keys, multiplied by the float val above
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
@@ -33,6 +34,5 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
         }
-
     }
 }
