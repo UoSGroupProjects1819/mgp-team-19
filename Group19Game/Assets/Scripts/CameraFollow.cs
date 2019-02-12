@@ -35,25 +35,25 @@ public class CameraFollow : MonoBehaviour
         HandleMovement();
         HandleZoom();
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             mouseOrigin = Input.mousePosition;
             isRotating = true;
         }
         
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             mouseOrigin = Input.mousePosition;
             isPanning = true;
-        }
+        }*/
         
         if (Input.GetMouseButtonDown(2))
         {
             mouseOrigin = Input.mousePosition;
             isZooming = true;
         }
-        if (!Input.GetMouseButton(0)) isRotating = false;
-        if (!Input.GetMouseButton(1)) isPanning = false;
+        if (!Input.GetMouseButton(1)) isRotating = false;
+        //if (!Input.GetMouseButton(1)) isPanning = false;
         if (!Input.GetMouseButton(2)) isZooming = false;
         
         if (isRotating)

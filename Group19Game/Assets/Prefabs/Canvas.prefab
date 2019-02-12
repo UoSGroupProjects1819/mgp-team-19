@@ -179,6 +179,6 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Z to Zoom
 
-    Left/Right to pan
+    Right mouse to rotate camera
 
     WASD to move'

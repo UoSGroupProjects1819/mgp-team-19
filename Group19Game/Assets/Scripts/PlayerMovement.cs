@@ -34,5 +34,23 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
         }
+
+        //Mouse input for interaction
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Transform objectHit = hit.transform;
+                Debug.Log("Hit " + objectHit);
+
+                if (objectHit.gameObject.tag == "BoomCube")
+                {
+                    objectHit.GetComponent<Box_Damage>().health--;
+                }
+            }
+        }
     }
 }

@@ -60,8 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Box_Damage.cs" />
+    <Compile Include="Assets\Scripts\brokenBoxExplode.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
+    <Compile Include="Assets\Scripts\MouseOverPlatform.cs" />
+    <Compile Include="Assets\Scripts\PlatformPartPicker.cs" />
     <Compile Include="Assets\Scripts\PlayerInstantiate.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
