@@ -10,9 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private bool NSpawned = false;
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         GameObject SpawnHalt = GameObject.Find("PlayerSetup");
-
+        DontDestroyOnLoad(this.gameObject);
         SpawnHalt.GetComponent<PlayerInstantiate>().willSpawnPlayer = false;
     }
     void Update()
@@ -63,5 +62,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         this.gameObject.transform.SetParent(null);
+        DontDestroyOnLoad(this.gameObject);
     }
 }

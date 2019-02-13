@@ -472,7 +472,7 @@ MonoBehaviour:
   Area4: 0
   Area5: 0
   Area6: 0
-  move_multiplier: 2
+  move_multiplier: 10
 --- !u!65 &8031349619165229424
 BoxCollider:
   m_ObjectHideFlags: 0
