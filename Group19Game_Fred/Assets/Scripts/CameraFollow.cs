@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+       
         mycamera = transform.GetComponent<Camera>();
     }
      
