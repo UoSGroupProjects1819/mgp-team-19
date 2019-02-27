@@ -44,10 +44,9 @@ public class PlayerMovement : MonoBehaviour
         //Mouse input for interaction
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Transform objectHit = hit.transform;
                 Debug.Log("Hit " + objectHit);
