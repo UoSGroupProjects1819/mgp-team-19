@@ -31,6 +31,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+        DontDestroyOnLoad(this.gameObject);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         HandleMovement();
         HandleZoom();
