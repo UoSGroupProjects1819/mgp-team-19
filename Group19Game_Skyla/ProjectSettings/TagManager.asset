@@ -7,6 +7,9 @@ TagManager:
   - Platform
   - BoomCube
   - MovingPlatform
+  - Fire
+  - CinematicCam
+  - Waypoint
   layers:
   - Default
   - TransparentFX
