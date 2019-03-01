@@ -7,6 +7,7 @@ public class PressurePlate : MonoBehaviour
     public GameObject door;
     public GameObject player;
     public float doorSpeed = 5;
+    public float DoorMovement = 0;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +20,12 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            door.transform.Translate(Vector3.up * (Time.deltaTime * doorSpeed));
+            if (DoorMovement <= (100))
+            {
+                door.transform.Translate(Vector3.up * (Time.deltaTime * doorSpeed));
+                DoorMovement += 1;
+            }
+            
         }
     }
     /*
