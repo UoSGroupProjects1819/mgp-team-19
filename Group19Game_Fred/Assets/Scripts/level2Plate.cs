@@ -14,6 +14,7 @@ public class level2Plate : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
+        //upon collision with first player(red) disables the animation for player 2 to pass and disables collision so they cannot restart.
         
         if (other.gameObject.tag == "Player")
         {
@@ -22,11 +23,12 @@ public class level2Plate : MonoBehaviour
             collision.SetActive(false);
 
         }
+
+        //upon collision with second player(black sets green plate to false, moves camera for progression and switches to other character.
         if (other.gameObject.tag == "SecondPlayer")
         {
             endPlate.SetActive(false);
             cam.GetComponent<Camera>().transform.position = Vector3.Lerp(endMarker.position, endMarker.position , Time.deltaTime);
-            this.gameObject.SetActive(false);
             GameObject.Find("GameManager").GetComponent<GameManager>().SwitchPlayer();
         }
     }

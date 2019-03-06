@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour
 {
-
+    public string player;
     public string SceneToLoad;
 
     private void OnTriggerEnter(Collider other)
@@ -19,6 +19,11 @@ public class LevelComplete : MonoBehaviour
         {
             SceneManager.LoadScene(SceneToLoad);
             GameObject.Find("GameManager").GetComponent<GameManager>().SwitchPlayer();
+        }
+
+        if (other.gameObject.tag == player)
+        {
+            SceneManager.LoadScene(SceneToLoad);
         }
     }
 }

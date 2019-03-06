@@ -11,6 +11,8 @@ public class ResetLevel : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //upon collision, resets the scene, and re-creates the players.
+
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "SecondPlayer")
         {
             SceneManager.LoadScene(SceneToLoad);

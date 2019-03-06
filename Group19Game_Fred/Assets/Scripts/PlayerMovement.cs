@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         GameObject SpawnHalt = GameObject.Find("PlayerSetup");
-        DontDestroyOnLoad(this.gameObject);
-        
         
     }
     void Update()
@@ -64,6 +62,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         this.gameObject.transform.SetParent(null);
-        DontDestroyOnLoad(this.gameObject);
+        
     }
 }
