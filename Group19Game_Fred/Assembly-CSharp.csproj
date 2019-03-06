@@ -81,6 +81,12 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\DoorMovement.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorBack.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorDown.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorFoward.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorLeft.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorRight.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorUp.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\level2Plate.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
