@@ -5,9 +5,10 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public GameObject door;
-    public GameObject player;
+    public string player;
     public float doorSpeed = 5;
     public float DoorMovement = 0;
+    public float maxDoorMovement = 0;
 
     // Update is called once per frame
     void Update()
@@ -18,9 +19,9 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == player)
         {
-            if (DoorMovement <= (100))
+            if (DoorMovement <= (maxDoorMovement))
             {
                 door.transform.Translate(Vector3.up * (Time.deltaTime * doorSpeed));
                 DoorMovement += 1;

@@ -81,7 +81,14 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\DoorMovement.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorBack.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorDown.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorFoward.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorLeft.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorRight.cs" />
+    <Compile Include="Assets\Scripts\Elevator\ElevatorUp.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\level2Plate.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
     <Compile Include="Assets\Scripts\MouseOverPlatform.cs" />
     <Compile Include="Assets\Scripts\PlatformPartPicker.cs" />
@@ -89,9 +96,10 @@
     <Compile Include="Assets\Scripts\PlayerSwitch.cs" />
     <Compile Include="Assets\Scripts\PlayerSwitch2.cs" />
     <Compile Include="Assets\Scripts\PressurePlate.cs" />
+    <Compile Include="Assets\Scripts\ResetLevel.cs" />
     <Compile Include="Assets\Scripts\SecondCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SecondPlayer.cs" />
-    <Compile Include="Assets\WreckingBallRelease.cs" />
+    <Compile Include="Assets\Scripts\WreckingBallRelease.cs" />
     <None Include="Assets\Effects\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
