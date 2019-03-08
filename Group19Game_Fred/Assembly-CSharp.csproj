@@ -68,6 +68,8 @@
     <Compile Include="Assets\Effects\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Effects\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Effects\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\LiftCol.cs" />
+    <Compile Include="Assets\PlayerDetection.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -81,12 +83,6 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\DoorMovement.cs" />
-    <Compile Include="Assets\Scripts\Elevator\ElevatorBack.cs" />
-    <Compile Include="Assets\Scripts\Elevator\ElevatorDown.cs" />
-    <Compile Include="Assets\Scripts\Elevator\ElevatorFoward.cs" />
-    <Compile Include="Assets\Scripts\Elevator\ElevatorLeft.cs" />
-    <Compile Include="Assets\Scripts\Elevator\ElevatorRight.cs" />
-    <Compile Include="Assets\Scripts\Elevator\ElevatorUp.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\level2Plate.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
