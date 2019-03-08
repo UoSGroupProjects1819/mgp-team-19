@@ -12,7 +12,11 @@ public class CameraFollow : MonoBehaviour
     public float smooth = 5f;
     public float turnSpeed = 4.0f;    
     public float panSpeed = 4.0f;     
-    public float zoomSpeedPan = 4.0f;     
+    public float zoomSpeedPan = 4.0f;
+    public float camx = 13;
+    public float camy = 130;
+    public float camz = 130;
+
 
     private Vector3 mouseOrigin;
     private bool isPanning; 
@@ -31,8 +35,6 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        DontDestroyOnLoad(this.gameObject);
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         HandleMovement();
         HandleZoom();
         
@@ -88,9 +90,9 @@ public class CameraFollow : MonoBehaviour
     private void HandleMovement()
     {
         Vector3 cameraFollowPosition = player.transform.position;
-        cameraFollowPosition.x = cameraFollowPosition.x - 0;
-        cameraFollowPosition.y = cameraFollowPosition.y + 50;
-        cameraFollowPosition.z = cameraFollowPosition.z - 50;
+        cameraFollowPosition.x = cameraFollowPosition.x - camx;
+        cameraFollowPosition.y = cameraFollowPosition.y + camy;
+        cameraFollowPosition.z = cameraFollowPosition.z - camz;
 
         Vector3 cameraMoveDir = (cameraFollowPosition - transform.position).normalized;
         float distance = Vector3.Distance(cameraFollowPosition, transform.position);

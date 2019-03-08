@@ -8,6 +8,7 @@ TagManager:
   - BoomCube
   - MovingPlatform
   - SecondPlayer
+  - Floor
   layers:
   - Default
   - TransparentFX

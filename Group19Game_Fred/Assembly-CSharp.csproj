@@ -68,6 +68,8 @@
     <Compile Include="Assets\Effects\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Effects\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Effects\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\LiftCol.cs" />
+    <Compile Include="Assets\PlayerDetection.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
