@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+       
         mycamera = transform.GetComponent<Camera>();
     }
      
@@ -31,6 +31,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+        DontDestroyOnLoad(this.gameObject);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         HandleMovement();
         HandleZoom();
@@ -88,7 +89,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 cameraFollowPosition = player.transform.position;
         cameraFollowPosition.x = cameraFollowPosition.x - 0;
-        cameraFollowPosition.y = 50;
+        cameraFollowPosition.y = cameraFollowPosition.y + 50;
         cameraFollowPosition.z = cameraFollowPosition.z - 50;
 
         Vector3 cameraMoveDir = (cameraFollowPosition - transform.position).normalized;
