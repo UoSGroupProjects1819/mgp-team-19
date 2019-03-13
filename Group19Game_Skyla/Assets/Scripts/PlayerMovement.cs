@@ -7,96 +7,58 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [Tooltip("Character Animation Handling")]
-    private bool right;
-    private bool left;
-    private bool front;
-    private bool back;
     public bool playerNum;
     public Transform cosmeticObj;
     public Animator anim;
     [Tooltip("Character speed as a float")]
     public float speed = 12f;
     public int player;
-    private Rigidbody rb;
-    public int rot;
-    public bool will_rot = true;
+    public float closeDistance = 5.0f;
+    public Transform pickupHolder;
+    private bool iscarrying;
+    private GameObject itemCarried;
     private void Start()
     {
         GameObject SpawnHalt = GameObject.Find("PlayerSetup");
-        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        //rebunked movement system
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveVertical, 0.0f, -moveHorizontal);
-
-        rb.AddForce(movement * speed);
-
         if(Input.GetKey(KeyCode.W))
         {
-            right = false;
-            left = false;
-            front = false;
-            back = false;
-            if (rot != 90 && will_rot == true)
+            this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            if (playerNum == false)
             {
-                if(rot == 90)
-                {
-                    will_rot = false;
-                    front = true;
-                }
-                rot++;
+                anim.SetBool("isWalking", true);
             }
-            rb.MoveRotation(Quaternion.Euler(0, rot, 0));
-            anim.SetBool("isRunning", true);
-            
+            else
+            {
+                anim.SetBool("isRunning", true);
+            }
         }
         if(Input.GetKey(KeyCode.S))
         {
-            if (rot != -90 && will_rot == true)
-            {
-                if (rot == -90)
-                {
-                    will_rot = false;
-                    back = true;
-                }
-                rot--;
-            }
-            rb.MoveRotation(Quaternion.Euler(0, rot, 0));
-            anim.SetBool("isRunning", true);
+            this.transform.Translate(Vector3.back * Time.deltaTime * speed / 2);
+            anim.SetBool("isWalking", true);
         }
         if(Input.GetKey(KeyCode.A))
         {
-            if (rot != 0 && will_rot == true)
-            {
-                if (rot == 0)
-                {
-                    will_rot = false;
-                    left = true;
-                }
-                rot--;
-            }
-            rb.MoveRotation(Quaternion.Euler(0, rot, 0));
-            anim.SetBool("isRunning", true);
+            this.transform.Translate(Vector3.left * Time.deltaTime * speed);
+            this.gameObject.transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * 200);
+            anim.SetBool("isWalking", true);
+            //anim.SetBool("isRunning", true);
         }
         if(Input.GetKey(KeyCode.D))
         {
-            if (rot != 180 && will_rot == true)
-            {
-                if (rot == 180)
-                {
-                    will_rot = false;
-                    right = true;
-                }
-                rot++;
-            }
-            rb.MoveRotation(Quaternion.Euler(0, rot, 0));
-            anim.SetBool("isRunning", true);
+            this.transform.Translate(Vector3.right * Time.deltaTime * speed);
+            this.gameObject.transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * 200);
+            anim.SetBool("isWalking", true);
+            //anim.SetBool("isRunning", true);
         }
-        anim.SetBool("isRunning", false);
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isWalking", false);
+        }
         //Mouse input for interaction
         if (Input.GetMouseButtonDown(0))
         {
@@ -111,8 +73,27 @@ public class PlayerMovement : MonoBehaviour
                 {
                     objectHit.GetComponent<Box_Damage>().health--;
                 }
+                else if(objectHit.gameObject.tag == "Pickup_Obj" && iscarrying == false && playerNum == false)
+                {
+                    Vector3 offset = objectHit.transform.position - this.transform.position;
+                    float sqrMag = offset.sqrMagnitude;
+
+                    Debug.Log("sqr mag is " + sqrMag);
+                    if(sqrMag < closeDistance * closeDistance)
+                    {
+                        objectHit.SetParent(pickupHolder);
+                        objectHit.SetPositionAndRotation(pickupHolder.position, Quaternion.Euler(0, 0, 0));
+                        itemCarried = objectHit.gameObject;
+                        iscarrying = true;
+                    }
+                }
             }
         }
+        if(Input.GetMouseButtonDown(1) && iscarrying == true)
+        {
+            DropObject();
+        }
+
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -124,6 +105,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         this.gameObject.transform.SetParent(null);
-        
+    }
+    private void DropObject()
+    {
+        if(iscarrying == true)
+        {
+            itemCarried.transform.parent = null;
+            itemCarried = null;
+            iscarrying = false;
+        }
     }
 }
