@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - BoomCube
   - MovingPlatform
+  - SecondPlayer
+  - Pickup_Obj
   layers:
   - Default
   - TransparentFX
