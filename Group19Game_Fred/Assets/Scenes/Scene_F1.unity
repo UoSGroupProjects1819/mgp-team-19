@@ -214,9 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3070f7bd5fd6d71449a86f49386f226c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
-  maxDoorMove3d: 100
 --- !u!65 &222878009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -287,7 +284,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &237791382
 PrefabInstance:
@@ -401,9 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f9011e65f325a49bea6795169d92ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
-  maxDoorMoveHoriz: 100
 --- !u!65 &370976103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -474,7 +468,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &408924768
 GameObject:
@@ -525,7 +519,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7d1a4e075957c1849a04271749fba5e8, type: 2}
+  - {fileID: 2100000, guid: 84e9454106ecb144d920f3a518176236, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -562,10 +556,10 @@ Transform:
   m_GameObject: {fileID: 408924768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.62, y: 0, z: 15.83}
-  m_LocalScale: {x: 109.126434, y: 1.6576, z: 109.126434}
+  m_LocalScale: {x: 109.126434, y: 1.6576, z: 472.23376}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497730758
 GameObject:
@@ -656,7 +650,7 @@ Transform:
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &521957609
 GameObject:
@@ -749,7 +743,7 @@ Transform:
   m_LocalScale: {x: 12, y: 0.2, z: 12}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &521957614
 BoxCollider:
@@ -821,7 +815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694876696
 GameObject:
@@ -887,7 +881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776120317
 GameObject:
@@ -979,7 +973,7 @@ Transform:
   m_LocalScale: {x: 10, y: 0.2, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &776120322
 MonoBehaviour:
@@ -994,7 +988,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1087779923}
+  door2: {fileID: 0}
   player: Player
+  player2: 
   doorSpeed: 8
   DoorMovement: 0
   maxDoorMovement: 100
@@ -1087,7 +1083,7 @@ Transform:
   m_LocalScale: {x: 7.9696007, y: 19.411072, z: 0.109430015}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1120990649
 PrefabInstance:
@@ -1270,6 +1266,8 @@ MonoBehaviour:
   playerCheck: 0
   PlayerOne: {fileID: 2030523478}
   PlayerTwo: {fileID: 280343226}
+  cam1: {fileID: 0}
+  cam2: {fileID: 0}
 --- !u!4 &1344850670
 Transform:
   m_ObjectHideFlags: 0
@@ -1282,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1359296529
 PrefabInstance:
@@ -1396,9 +1394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f57607b58d848542a8013873f7fcb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
-  maxDoorMoveVert: 100
 --- !u!65 &1375681681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1469,8 +1464,65 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1576621768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1771321820395152, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_Name
+      value: enchantedforest_bush_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.76479
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8288
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -141.78023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000046845415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.96592504
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000001748323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.25882214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -210
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337999327320426, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06c65e58b49bf497fbdec0a0111ab829, type: 3}
 --- !u!1 &1596926797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1821339048139009722, guid: a65c339a6abb5304391286ed50abdf13,
@@ -1528,8 +1580,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7cb9c3996856248bcaeaef7ab30dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
 --- !u!65 &1602339536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1600,7 +1650,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1642924507
 GameObject:
@@ -1634,9 +1684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26179bbdc388e4342b01d19d0082de83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
-  maxDoorMove3d: 100
 --- !u!65 &1642924509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1707,7 +1754,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643812397
 GameObject:
@@ -1812,7 +1859,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1704306606
 GameObject:
@@ -1846,9 +1893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cec177148ad3a646975ff00d891eb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
-  maxDoorMoveHoriz: 100
 --- !u!65 &1704306608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1919,7 +1963,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1924411384
 GameObject:
@@ -2011,7 +2055,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1924411391
 MonoBehaviour:
@@ -2025,8 +2069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7cb9c3996856248bcaeaef7ab30dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
 --- !u!1 &2030523478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2894199071548663938, guid: 62c9cd625710886449096252f2382297,
@@ -2123,7 +2165,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2123455333
 MonoBehaviour:
@@ -2137,9 +2179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f57607b58d848542a8013873f7fcb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lift: {fileID: 521957609}
-  liftSpeed: 12
-  maxDoorMoveVert: 123
 --- !u!1001 &310477751919256269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2221,7 +2260,7 @@ Transform:
   m_LocalScale: {x: 21.198, y: 0.2, z: 21.0395}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &558643719173395300
 BoxCollider:
@@ -2249,6 +2288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: Player
+  player2: 
   SceneToLoad: Scene_F3
 --- !u!23 &558643719173395302
 MeshRenderer:

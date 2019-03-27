@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/S_TestScene.unity
-=======
-- path: Assets/Scenes/Scene_F5.unity
->>>>>>> bd10bb952c26d3c624c3b17c8ec4a61dcaded098
+- path: Assets/Scenes/Scene_F3.unity
   isLoaded: 1
   isActive: 1
