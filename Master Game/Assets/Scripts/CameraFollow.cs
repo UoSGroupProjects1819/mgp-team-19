@@ -2,6 +2,8 @@
 
 public class CameraFollow : MonoBehaviour
 {
+    private const float y_angle_min = 0.0f;
+    private const float y_angle_max = 70.0f;
     [Header("Assigned Variables")]
     public Transform player;
     public Camera mycamera;
@@ -16,18 +18,20 @@ public class CameraFollow : MonoBehaviour
     public float camx = 13;
     public float camy = 130;
     public float camz = 130;
-
-
+    private float speed = 10.0f;
     private Vector3 mouseOrigin;
     private bool isPanning; 
     private bool isRotating; 
     private bool isZooming;
+    public Transform lookat;
+    public Transform camTransform;
 
 
 
     private void Start()
     {
-       
+        camTransform = transform;
+        cam = Camera.main;
         mycamera = transform.GetComponent<Camera>();
     }
      
@@ -44,12 +48,6 @@ public class CameraFollow : MonoBehaviour
             isRotating = true;
         }
         
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            mouseOrigin = Input.mousePosition;
-            isPanning = true;
-        }*/
-        
         if (Input.GetMouseButtonDown(2))
         {
             mouseOrigin = Input.mousePosition;
@@ -63,13 +61,14 @@ public class CameraFollow : MonoBehaviour
         {
             Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
-            transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
-            transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
+            transform.RotateAround(player.transform.position, transform.right, -pos.y);
+            transform.RotateAround(player.transform.position, Vector3.up, pos.x);
         }
         
         if (isPanning)
         {
-            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+            //Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+            Vector3 pos = player.transform.position; 
 
             Vector3 move = new Vector3(pos.x * panSpeed, pos.y * panSpeed, 0);
             transform.Translate(move, Space.Self);
