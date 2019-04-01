@@ -17,6 +17,7 @@ public class WreckingBallRelease : MonoBehaviour
 
             anim1.GetComponent<Animator>().enabled = true;
             anim2.GetComponent<Animator>().enabled = true;
+            this.gameObject.SetActive(false);
         }
     }
 }
