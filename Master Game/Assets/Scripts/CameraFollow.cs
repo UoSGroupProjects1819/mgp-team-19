@@ -31,7 +31,7 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         camTransform = transform;
-        cam = Camera.main;
+        mycamera = Camera.main;
         mycamera = transform.GetComponent<Camera>();
     }
      
