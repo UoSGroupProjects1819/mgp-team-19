@@ -2,131 +2,68 @@
 
 public class CameraFollow : MonoBehaviour
 {
-    private const float y_angle_min = 0.0f;
-    private const float y_angle_max = 70.0f;
-    [Header("Assigned Variables")]
-    public Transform player;
-    public Camera mycamera;
-    [Header("Camera movement variables")]
-    public float zoomSpeed = 20f;
-    public float normal = 60f;
-    private bool isZoomed = false;
-    public float smooth = 5f;
-    public float turnSpeed = 4.0f;    
-    public float panSpeed = 4.0f;     
-    public float zoomSpeedPan = 4.0f;
-    public float camx = 13;
-    public float camy = 130;
-    public float camz = 130;
-    private float speed = 10.0f;
-    private Vector3 mouseOrigin;
-    private bool isPanning; 
-    private bool isRotating; 
-    private bool isZooming;
-    public Transform lookat;
-    public Transform camTransform;
+    public float CameraMoveSpeed = 120.0f;
+    public GameObject CameraFollowObj;
+    Vector3 FollowPOS;
+    public float clampAngle = 80.0f;
+    public float inputSensitivity = 150.0f;
+    public GameObject CameraObj;
+    public GameObject PlayerObj;
+    public float camDistanceXToPlayer;
+    public float camDistanceZToPlayer;
+    public float camDistanceYToPlayer;
+    public float mouseX;
+    public float mouseY;
+    public float finalInputX;
+    public float finalInputZ;
+    public float smoothX;
+    public float smoothY;
+    private float rotY = 0.0f;
+    private float rotX = 0.0f;
 
 
 
     private void Start()
     {
-        camTransform = transform;
-        mycamera = Camera.main;
-        mycamera = transform.GetComponent<Camera>();
+        Vector3 rot = transform.localRotation.eulerAngles;
+        rotY = rot.y;
+        rotX = rot.x;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
-     
 
-
-    void Update()
+    private void Update()
     {
-        HandleMovement();
-        HandleZoom();
-        
-        if (Input.GetMouseButtonDown(1))
-        {
-            mouseOrigin = Input.mousePosition;
-            isRotating = true;
-        }
-        
-        if (Input.GetMouseButtonDown(2))
-        {
-            mouseOrigin = Input.mousePosition;
-            isZooming = true;
-        }
-        if (!Input.GetMouseButton(1)) isRotating = false;
-        //if (!Input.GetMouseButton(1)) isPanning = false;
-        if (!Input.GetMouseButton(2)) isZooming = false;
-        
-        if (isRotating)
-        {
-            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
-            transform.RotateAround(player.transform.position, transform.right, -pos.y);
-            transform.RotateAround(player.transform.position, Vector3.up, pos.x);
-        }
-        
-        if (isPanning)
-        {
-            //Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
-            Vector3 pos = player.transform.position; 
+        float inputX = Input.GetAxis("RightStickHorizontal");
+        float inputZ = Input.GetAxis("RightStickVertical");
+        mouseX = Input.GetAxis("Mouse X");
+        mouseY = Input.GetAxis("Mouse Y");
+        finalInputX = inputX + mouseX;
+        finalInputZ = inputZ + mouseY;
 
-            Vector3 move = new Vector3(pos.x * panSpeed, pos.y * panSpeed, 0);
-            transform.Translate(move, Space.Self);
-        }
-        if (isZooming)
-        {
-            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+        rotY += finalInputX * inputSensitivity * Time.deltaTime;
+        rotX += finalInputZ * inputSensitivity * Time.deltaTime;
 
-            Vector3 move = pos.y * zoomSpeedPan * transform.forward;
-            transform.Translate(move, Space.World);
-        }
+        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+
+        Quaternion localRotation = Quaternion.Euler(-rotX, rotY, 0.0f);
+        transform.rotation = localRotation;
+
     }
 
-
-
-
-
-    private void HandleMovement()
+    private void LateUpdate()
     {
-        Vector3 cameraFollowPosition = player.transform.position;
-        cameraFollowPosition.x = cameraFollowPosition.x - camx;
-        cameraFollowPosition.y = cameraFollowPosition.y + camy;
-        cameraFollowPosition.z = cameraFollowPosition.z - camz;
-
-        Vector3 cameraMoveDir = (cameraFollowPosition - transform.position).normalized;
-        float distance = Vector3.Distance(cameraFollowPosition, transform.position);
-        float cameraMoveSpeed = 3f;
-
-        if (distance > 0)
-        {
-            Vector3 newCameraPosition = transform.position + cameraMoveDir * distance * cameraMoveSpeed * Time.deltaTime;
-
-            float distanceAfterMoving = Vector3.Distance(newCameraPosition, cameraFollowPosition);
-
-            if (distanceAfterMoving > distance)
-            {
-                newCameraPosition = cameraFollowPosition;
-            }
-
-            transform.position = newCameraPosition;
-        }
+        CameraUpdater();
     }
 
-    private void HandleZoom()
+    void CameraUpdater()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            isZoomed = !isZoomed;
-        }
-
-        if (isZoomed)
-        {
-            mycamera.fieldOfView = Mathf.Lerp(mycamera.fieldOfView, zoomSpeed, Time.deltaTime * smooth);
-        }
-
-        else
-        {
-            mycamera.fieldOfView = Mathf.Lerp(mycamera.fieldOfView, normal, Time.deltaTime * smooth);
-        }
+        Transform target = CameraFollowObj.transform;
+        float step = CameraMoveSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
+
+
 }
