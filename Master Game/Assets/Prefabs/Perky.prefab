@@ -318,7 +318,7 @@ MonoBehaviour:
   playerNum: 1
   cosmeticObj: {fileID: 8623969767078344872}
   anim: {fileID: 8623969768243994088}
-  speed: 20
+  speed: 50
   player: 1
   closeDistance: 5
   pickupHolder: {fileID: 4606447263600705519}

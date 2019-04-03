@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_F4.unity
     guid: 17025322ac9ef454d9b39411b0b2b175
+  - enabled: 1
+    path: Assets/Scenes/Scene_F5.unity
+    guid: 224c2238d3a66f0499ee13c50a3a423a
+  - enabled: 1
+    path: Assets/Scenes/Scene_F6.unity
+    guid: 958a336c4d135b341998a81531ec0f9b
+  - enabled: 1
+    path: Assets/Scenes/Scene_F7.unity
+    guid: e380921d8ab91e64ba92d4a2c06acc2b
   m_configObjects: {}

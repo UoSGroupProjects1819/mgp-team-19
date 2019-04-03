@@ -19,11 +19,10 @@ public class LevelComplete : MonoBehaviour
 
         if (other.gameObject.tag == "SecondPlayer")
         {
-            SceneManager.LoadScene(SceneToLoad);
             GameObject.Find("GameManager").GetComponent<GameManager>().SwitchPlayer();
         }
 
-        if (other.gameObject.tag == player && other.gameObject.tag == player2)
+        if (other.gameObject.tag == player && other.gameObject.tag == player2) 
         {
             SceneManager.LoadScene(SceneToLoad);
         }

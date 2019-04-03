@@ -41,14 +41,14 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.transform.Translate(Vector3.left * Time.deltaTime * speed);
+            this.transform.Translate(Vector3.left * Time.deltaTime);
             this.gameObject.transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * 200);
             anim.SetBool("isWalking", true);
             //anim.SetBool("isRunning", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.transform.Translate(Vector3.right * Time.deltaTime * speed);
+            this.transform.Translate(Vector3.right * Time.deltaTime);
             this.gameObject.transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * 200);
             anim.SetBool("isWalking", true);
             //anim.SetBool("isRunning", true);

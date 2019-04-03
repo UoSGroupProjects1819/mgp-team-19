@@ -995,9 +995,9 @@ MonoBehaviour:
   playerNum: 1
   cosmeticObj: {fileID: 994577924867187623}
   anim: {fileID: 994577923142758599}
-  speed: 40
+  speed: 100
   player: 0
-  closeDistance: 60
+  closeDistance: 0
   pickupHolder: {fileID: 1680481451715553723}
 --- !u!65 &994577924867187626
 BoxCollider:
