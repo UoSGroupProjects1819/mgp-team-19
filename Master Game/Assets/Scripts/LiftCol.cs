@@ -76,8 +76,9 @@ public class LiftCol : MonoBehaviour
         {
             if (other.gameObject.tag == "Floor")
             {
-                this.gameObject.transform.Translate(Vector3.right * (Time.deltaTime * 1));
                 no_left = true;
+                this.gameObject.transform.Translate(Vector3.right * (Time.deltaTime * 1));
+                
             }
         }
         if (right_button.GetComponent<PlayerDetection>().player_hit_me == true)
@@ -92,6 +93,7 @@ public class LiftCol : MonoBehaviour
         {
             if (other.gameObject.tag == "Floor")
             {
+                no_foward = true;
                 this.gameObject.transform.Translate(Vector3.back * (Time.deltaTime * 1));
             }
         }
@@ -99,6 +101,7 @@ public class LiftCol : MonoBehaviour
         {
             if (other.gameObject.tag == "Floor")
             {
+                no_back = true;
                 this.gameObject.transform.Translate(Vector3.forward * (Time.deltaTime * 1));
             }
         }
