@@ -25,6 +25,7 @@ public class LevelComplete : MonoBehaviour
         if (other.gameObject.tag == player && other.gameObject.tag == player2) 
         {
             SceneManager.LoadScene(SceneToLoad);
+            Debug.Log("Hello");
         }
     }
 }
