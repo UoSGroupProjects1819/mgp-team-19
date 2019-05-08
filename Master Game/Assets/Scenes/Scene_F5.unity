@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3346,11 +3346,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2391238443120410140, guid: c96abb29815e3f04cb8ea4f78fcf4244,
-        type: 3}
-      propertyPath: m_Name
-      value: Mesh184
-      objectReference: {fileID: 0}
     - target: {fileID: 2388365345578877246, guid: c96abb29815e3f04cb8ea4f78fcf4244,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3420,6 +3415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 34.30142
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391238443120410140, guid: c96abb29815e3f04cb8ea4f78fcf4244,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh184
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c96abb29815e3f04cb8ea4f78fcf4244, type: 3}
@@ -5320,11 +5320,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5277781251686898892, guid: 9102e23570db98146b5f7e524dc334fd,
-        type: 3}
-      propertyPath: m_Name
-      value: Mesh12
-      objectReference: {fileID: 0}
     - target: {fileID: 5272514878838866916, guid: 9102e23570db98146b5f7e524dc334fd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5394,6 +5389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8830935
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277781251686898892, guid: 9102e23570db98146b5f7e524dc334fd,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9102e23570db98146b5f7e524dc334fd, type: 3}
@@ -5989,11 +5989,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5198450936074376928, guid: bba7d12c8c65d694fb0c1c6f59d465b5,
-        type: 3}
-      propertyPath: m_Name
-      value: Mesh13
-      objectReference: {fileID: 0}
     - target: {fileID: 5203822053995092004, guid: bba7d12c8c65d694fb0c1c6f59d465b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6063,6 +6058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8830935
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198450936074376928, guid: bba7d12c8c65d694fb0c1c6f59d465b5,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bba7d12c8c65d694fb0c1c6f59d465b5, type: 3}
@@ -7631,7 +7631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: Player
-  player2: 
+  player2: SecondPlayer
   SceneToLoad: Scene_F6
 --- !u!23 &1247963859872545718
 MeshRenderer:
